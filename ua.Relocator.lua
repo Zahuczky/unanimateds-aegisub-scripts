@@ -1450,8 +1450,7 @@ function modifier(subs,sel,act)
 		end
 		if text:match("\\i?clip") and res.rnd=="all" or text:match("\\i?clip") and res.rnd=="clip" then
 		  for klip in text:gmatch("\\i?clip%([^%)]+%)") do
-		    rrr=rr
-		    klip2=klip:gsub("([%d.-]+)",function(c) return round(c,rrr) end)
+		    klip2=klip:gsub("([%d.-]+)",function(c) return round(c,rr) end)
 		    text=text:gsub(esc(klip),klip2)
 		  end
 		end
